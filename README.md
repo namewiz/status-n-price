@@ -34,9 +34,38 @@ const snp = new StatusNPrice({
   statusOptions: { burstMode: true }, // forwarded to domainstat
 });
 
-const result = await snp.check('example.com', {
+const exampleResult = await snp.check('example.com', {
   quote: { discountCodes: ['SAVE10'] },
 });
+console.log(exampleResult)
+// output
+// {
+//   domain: 'example.com', availability: 'registered', resolver: 'dns.doh',
+//   raw: {...}, latencies: { ... },
+//   error: undefined,
+//   price: undefined
+// }
+
+const exampleUnregistered = await snp.check('example-undefined.com', {
+  quote: { discountCodes: ['SAVE10'] },
+});
+console.log(exampleUnregistered)
+// output
+// {
+//   domain: 'example-undefined.com', availability: 'unregistered', resolver: 'rdap',
+//   raw: {...}, latencies: { ... },
+//   error: undefined,
+//   price: {
+//     extension: 'com',
+//     currency: 'USD',
+//     basePrice: 11.98,
+//     discount: 0,
+//     tax: 0,
+//     totalPrice: 11.98,
+//     symbol: '$',
+//     transaction: 'create'
+//   }
+// }
 ```
 
 Notes

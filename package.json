@@ -6,8 +6,8 @@
   "main": "./dist/index.js",
   "scripts": {
     "build": "npm run build:lib",
-    "build:lib": "npx -y esbuild src/index.ts --bundle --minify --format=esm --target=es2022 --outdir=dist/ --platform=neutral",
-    "test": "echo 'no tests'",
+    "build:lib": "npx -y esbuild src/index.ts --bundle --minify --format=esm --target=es2022 --outdir=dist/ --platform=neutral --external:domainstat --external:domain-quotes",
+    "test": "npm run build && node --test",
     "start": "npm run build && npx serve docs"
   },
   "homepage": "https://namewiz.github.io/status-n-price",
