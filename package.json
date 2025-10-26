@@ -1,6 +1,6 @@
 {
   "name": "status-n-price",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Domain status + price quotes using domainstat and domain-quotes.",
   "type": "module",
   "main": "./dist/index.js",
