@@ -1,6 +1,6 @@
 {
   "name": "status-n-price",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Domain status + price quotes using domainstat and domain-quotes.",
   "type": "module",
   "main": "./dist/index.js",
@@ -35,8 +35,7 @@
     "npm": "^10.9.0"
   },
   "dependencies": {
-    "domain-quotes": "^0.0.20",
+    "domain-quotes": "^0.2.1",
     "domainstat": "^1.0.6"
-  },
-  "devDependencies": {}
+  }
 }

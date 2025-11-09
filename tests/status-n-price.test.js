@@ -40,7 +40,7 @@ if (!NETWORK_OK) {
   });
 
   test('checkBatch mixes registered and unregistered with prices where applicable', async () => {
-    const [a, b] = await lib.checkBatch(['google.com', 'this-domain-should-not-exist-12345.org'], { currency: 'EUR' });
+    const [a, b] = await lib.checkBatch(['google.com', 'this-domain-should-not-exist-12345.org'], { currency: 'NGN' });
     assert.equal(a.domain, 'google.com');
     assert.equal(a.availability, 'registered');
     assert.equal(a.price, undefined);
@@ -48,7 +48,7 @@ if (!NETWORK_OK) {
     assert.equal(b.domain, 'this-domain-should-not-exist-12345.org');
     assert.equal(b.availability, 'unregistered');
     assert.ok(b.price);
-    assert.equal(b.price.currency, 'EUR');
+    assert.equal(b.price.currency, 'NGN');
     assert.ok(b.price.totalPrice > 0);
   });
 }
